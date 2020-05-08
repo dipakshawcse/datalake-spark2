@@ -25,18 +25,20 @@ object MergeTwoDataframe {
 
       // JDBC Connection and load table in Dataframe
       val sourceDf = spark.read.format("jdbc")
-        .option("driver", driver)
-        .option("url", url)
-        .option("dbtable", sourceTable)
-        .option("user", user)
-        .option("password", pass)
-        .load()
+                              .option("driver", driver)
+                              .option("url", url)
+                              .option("dbtable", sourceTable)
+                              .option("user", user)
+                              .option("password", pass)
+                              .load()
 
       // Read data from Dataframe
       sourceDf.show()
 
       // Load data from CSV file
-      val csvDf = spark.read.format("csv").option("header", "true").load(filePath)
+      val csvDf = spark.read.format("csv")
+                            .option("header", "true")
+                            .load(filePath)
       csvDf.show()
 
       // Merge both dataframes

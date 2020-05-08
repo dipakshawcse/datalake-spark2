@@ -4,7 +4,7 @@
 		module="datalake-spark2$sources"
 		revision="0.1"
 		status="integration"
-		publication="20200211140936"
+		publication="20200508164714"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
